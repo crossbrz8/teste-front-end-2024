@@ -44,10 +44,10 @@ export function listVideos(videos: Video[], container: HTMLDivElement) {
         const favorites = JSON.parse(storedFavorites);
         if (favorites.includes(video.id.videoId)) {
           favorites.splice(favorites.indexOf(video.id.videoId), 1);
-          favoriteButton.classList.remove('bg-red-400');
+          favoriteButton.classList.remove('bg-yellow-400');
         } else {
           favorites.push(video.id.videoId);
-          favoriteButton.classList.add('bg-red-400');
+          favoriteButton.classList.add('bg-yellow-400');
         }
         localStorage.setItem('favorites', JSON.stringify(favorites));
         updateFavoritesList();
@@ -58,6 +58,7 @@ export function listVideos(videos: Video[], container: HTMLDivElement) {
       }
     });
 
+
     favoriteButton.className = 'size-10 mr-auto text-white rounded-full p-2 cursor-pointer';
     favoriteButton.innerHTML = '<img src="/favorites.svg" alt="favorite" class="size-6">';
 
@@ -65,13 +66,12 @@ export function listVideos(videos: Video[], container: HTMLDivElement) {
     title.className = 'text-md font-medium my-2 px-4';
     title.textContent = video.snippet.title;
 
-    // verify if the video is a favorite
     
     const storedFavorites = localStorage.getItem('favorites');
     if (storedFavorites) {
       const favorites = JSON.parse(storedFavorites);
       if (favorites.includes(video.id.videoId)) {
-        favoriteButton.classList.add('bg-red-400');
+        favoriteButton.classList.add('bg-yellow-400');
       }
     }
 

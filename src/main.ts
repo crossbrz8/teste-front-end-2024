@@ -8,7 +8,7 @@ import { listFavoriteVideos, getFavoriteVideos } from './components/Favorites';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div class="flex">
-    <div id="sidebar-container" class="lg:w-64"></div>
+    <div id="sidebar-container" class="border-r border-white/20 border-dotted"></div>
     <div class="flex flex-col flex-grow lg:max-w-6xl lg:mx-auto px-4 lg:px-0">
       <div class="w-full py-1 flex items-center justify-center">
         <button onclick="window.location.reload()" class="flex items-center gap-2 mt-3 cursor-pointer">

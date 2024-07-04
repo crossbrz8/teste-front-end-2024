@@ -18,7 +18,7 @@ export function listFavoriteVideos(videos: Video[], container: HTMLDivElement) {
   container.innerHTML = ''; // Clear previous results
 
   if (!videos || videos.length === 0) {
-    container.innerHTML = '<p>No favorite videos found.</p>';
+    container.innerHTML = '<p class="text-white w-full">No favorite videos found.</p>';
     return;
   }
 
